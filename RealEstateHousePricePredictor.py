@@ -8,24 +8,19 @@ import plotly.graph_objects as go
 import folium
 from folium.plugins import HeatMap, MarkerCluster
 from streamlit_folium import folium_static
-from datetime import datetime
-import calendar
-from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
-from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, ExtraTreesRegressor
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.feature_selection import SelectFromModel
-import shap
-import re
+import os
 import warnings
 import time
 import joblib
 from pathlib import Path
-import os
+import re
+
+# Attempt safe SHAP import
+try:
+    import shap
+    shap_available = True
+except ImportError:
+    shap_available = False
 
 # Suppress warnings
 warnings.filterwarnings('ignore')
