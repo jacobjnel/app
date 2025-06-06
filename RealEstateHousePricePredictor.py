@@ -15,12 +15,13 @@ import joblib
 from pathlib import Path
 import re
 
-# Attempt safe SHAP import
+# Safe SHAP import — fully correct version
 try:
     import shap
     shap_available = True
 except ImportError:
     shap_available = False
+
 
 # Suppress warnings
 warnings.filterwarnings('ignore')
