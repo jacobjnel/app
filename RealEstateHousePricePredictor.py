@@ -14,6 +14,7 @@ import time
 import joblib
 from pathlib import Path
 import re
+import calendar
 
 # Safe SHAP import — fully correct version
 try:
